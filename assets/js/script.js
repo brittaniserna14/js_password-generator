@@ -63,7 +63,9 @@ function generatePassword() {
   //the variable prompts the user to choose the length of password and if it includes lower, upper, num/spec. characters
   var passwordLength = 0;
   while (!(passwordLength >= 8) || !(passwordLength <= 128)) {
-    passwordLength = prompt("how long?, Must be between 8-128 characters.");
+    passwordLength = prompt(
+      "How long would you like for the password to be?, Must choose a length between 8-128 characters."
+    );
   }
 
   var includeLower = confirm("Include lowercase letters?");
