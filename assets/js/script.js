@@ -1,11 +1,66 @@
-// Assignment code here
-var UPPERCASE = ["A", "B", "C"];
-var LOWERCASE = ["a", "b", "c"];
-var NUMBERS = ["1", "2", "3"];
-var SPECIAL = ["!", "$", "%"];
+// the variables including all the characters that will be selected for randomization by the generator.
+var UPPERCASE = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+var LOWERCASE = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var SPECIAL = ["!", "$", "%", "&", "*", "#"];
 
+//the function below is going to generate the password using the character pools once the prompts are satisfied by the user.
 function generatePassword() {
-  //length of password, lower, upper, num/spec
+  //the variable prompts the user to choose the length of password and if it includes lower, upper, num/spec. characters
   var passwordLength = 0;
   while (!(passwordLength >= 8) || !(passwordLength <= 128)) {
     passwordLength = prompt("how long?, Must be between 8-128 characters.");
@@ -23,9 +78,8 @@ function generatePassword() {
     includeSpecial
   );
   // Get info from user to generate password.
-  // Generate password based on criteria
+  // Generate password based on criteria by concatinating the characterPool variable with the 4 options.
   var characterPool = [];
-  //var children = hege.concat(stale);
   if (includeUpper) {
     characterPool = characterPool.concat(UPPERCASE);
   }
@@ -54,9 +108,10 @@ function rand(lo, hi) {
   return Math.floor(Math.random() * diff) + lo;
 }
 
+//sends an alert to the user telling them what the password should include.
 function pwCriteria() {
   window.alert(
-    " -the password must be at least 8 characters, - the password must include: lower case and upper case letters, numbers and/or special characters"
+    " -the password must be at least 8 characters but no more than 128. - the password can include: lower case and/or upper case letters, numbers and/or special characters"
   );
 }
 // Get references to the #generate element
@@ -72,5 +127,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// pwCriteria();
