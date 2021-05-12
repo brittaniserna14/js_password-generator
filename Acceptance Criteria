@@ -1,7 +1,0 @@
-- be presented with  series of prompts for criteria
-- be able to  select  password criteria
-- password is at least 8 characters and no more than 128 
-- password includes lowercase, upper case, numeric, and/or special characters
-- input should be validated and at least one character type should be selected
-- when prompts are answered a passsword is generated  that matches criteria
-- password is displayed in an alert or written on the page
